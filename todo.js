@@ -1,6 +1,16 @@
 #!/usr/bin/env node
 
-console.log(process.argv);
+// Load dependencies
+const rl = require("readline");
+
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+
+const adapter = new FileSync("db.json");
+const db = low(adapter);
+
+// Set defaults in case JSON file is empty
+db.defaults({ todos: [] }).write();
 
 // Set args to a string array of command line arguments
 const args = process.argv;
