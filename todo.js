@@ -21,3 +21,14 @@ function usage() {
     `;
   console.log(usageText);
 }
+
+// log errors
+function errorLog(error) {
+  console.log(error);
+}
+
+// Make sure there are only 3 arguments
+if (args.length > 3) {
+  errorLog("Please enter just one argument");
+  usage();
+}
