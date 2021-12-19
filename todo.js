@@ -36,7 +36,24 @@ if (args.length > 3) {
 }
 
 // Make sure the user entered a valid command word
+// The user's command is args[2]
 if (!commands.includes(args[2])) {
   errorLog("Please enter a valid command");
   usage();
+}
+
+// Implement commands by checking the user's entry (args[2]) against different cases
+switch (args[2]) {
+  case "help":
+    usage();
+    break;
+  case "new":
+    break;
+  case "get":
+    break;
+  case "complete":
+    break;
+  default:
+    errorLog("Please enter a valid command");
+    usage;
 }
